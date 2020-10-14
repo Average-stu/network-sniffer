@@ -17,6 +17,9 @@ A raw socket when put in recvfrom loop receives all incoming packets. This is be
  >`gcc packet.c -o packet -lpcap` \
  >`sudo ./packet` 
  
+ <img src="https://github.com/Average-stu/network-sniffer/blob/main/Screenshot%20from%202020-10-14%2021-23-25.png">
+ <img src="https://github.com/Average-stu/network-sniffer/blob/main/Screenshot%20from%202020-10-14%2021-27-45.png">
+
  
  The program must be run as root user or superuser privileges. e.g. sudo ./packet in linux.\
  The program creates raw sockets which require root access.
