@@ -34,7 +34,8 @@ elif [[ $option == 2 || $option == 02 ]]; then
 cat sniffed.txt
 
 elif [[ $option == 3 || $option == 03 ]]; then
-cd 
+
+bash a.sh 
 
 elif [[ $option  == 99 ]]; then
 exit 1
@@ -42,6 +43,7 @@ else
 printf "\e[5;93m[\e[1;77m!\e[0m\e[1;93m] Invalid option!\e[0m"
 sleep 0.5
 clear
+banner
 menu
 fi
 }
