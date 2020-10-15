@@ -14,10 +14,12 @@ To code a very simply sniffer in C the steps would be
 A raw socket when put in recvfrom loop receives all incoming packets. This is because it is not bound to a particular address or port.
 
 # Compile and Run
- >`gcc packet.c -o packet -lpcap` \
- >`sudo ./packet` 
+ >`chmod +x main.sh` \
+ >`sudo ./main.sh` 
  
- <img src="https://github.com/Average-stu/network-sniffer/blob/main/Screenshot%20from%202020-10-14%2021-23-25.png">
+  <img src="https://github.com/Average-stu/network-sniffer/blob/main/Screenshot%20from%202020-10-14%2023-47-07.png">
+  <img src="https://github.com/Average-stu/network-sniffer/blob/main/Screenshot%20from%202020-10-14%2023-47-34.png">
+ <img src="https://github.com/Average-stu/network-sniffer/blob/main/Screenshot%20from%202020-10-14%2023-47-21.png">
  <img src="https://github.com/Average-stu/network-sniffer/blob/main/Screenshot%20from%202020-10-14%2021-27-45.png">
 
  
