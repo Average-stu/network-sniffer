@@ -22,7 +22,7 @@ void PrintData(const u_char * , int);
 
 FILE *logs;
 struct sockaddr_in source, destination;
-int tcp=0,udp=0,icmp=0,misc=0,igmp=0,total=0,i,j;
+int tcp=0,udp=0,icmp=0,misc=0,total=0,i,j;
 
 
 
@@ -87,9 +87,6 @@ void packet(u_char *args, const struct pcap_pkthdr *header, const u_char *buffer
 			++icmp;
 			print_icmp(buffer,size);
 			break;
-		case 2:		//IGMP 
-		 	++igmp;
-		 	break;
 		 case 6:	//TCP
 		 	++tcp;
 		 	print_tcp(buffer,size);
@@ -102,7 +99,7 @@ void packet(u_char *args, const struct pcap_pkthdr *header, const u_char *buffer
 		 	++misc;
 		 	break;		 
 	}
-	printf("TCP: %d\t UDP: %d\t ICMP: %d\t IGMP: %d\t Misc: %d\t Total: %d\r",tcp,udp,icmp,igmp,misc,total);
+	printf("TCP: %d\t UDP: %d\t ICMP: %d\t Misc: %d\t Total: %d\r",tcp,udp,icmp,misc,total);
 }
 
 void print_ethernet_header(const u_char *buffer, int size)
