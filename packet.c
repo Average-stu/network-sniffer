@@ -1,20 +1,21 @@
 #include<pcap.h>
 #include<stdio.h>
 #include<stdlib.h> 
-#include<string.h> 
-#include<sys/socket.h>
+#include<string.h>
 #include<arpa/inet.h> 
 #include<net/ethernet.h>
-#include<netinet/ip_icmp.h>
+#include<netinet/tcp.h>
 #include<netinet/udp.h>	
-#include<netinet/tcp.h>	
+#include<netinet/ip_icmp.h>	
 #include<netinet/ip.h>
+#include<sys/socket.h>
+#include<arpa/inet.h>
 
 
 void packet(u_char *, const struct pcap_pkthdr *, const u_char *);
 void ip_packet(const u_char * , int);
 void print_ip(const u_char * , int);
-void print_tcp(const u_char *  , int );
+void print_tcp(const u_char* , int);
 void print_udp(const u_char * , int);
 void print_icmp(const u_char * , int );
 void PrintData(const u_char * , int);
@@ -22,7 +23,7 @@ void PrintData(const u_char * , int);
 
 FILE *logs;
 struct sockaddr_in source, destination;
-int tcp=0,udp=0,icmp=0,misc=0,total=0,i,j;
+int tcp=0,udp=0,icmp=0,misc=0,igmp=0,total=0,i,j;
 
 
 
@@ -87,6 +88,9 @@ void packet(u_char *args, const struct pcap_pkthdr *header, const u_char *buffer
 			++icmp;
 			print_icmp(buffer,size);
 			break;
+		case 2:		//IGMP 
+		 	++igmp;
+		 	break;
 		 case 6:	//TCP
 		 	++tcp;
 		 	print_tcp(buffer,size);
@@ -143,6 +147,8 @@ void print_ip(const u_char * buffer, int size){
 }
 
 
+
+//tcp
 void print_tcp(const u_char * buffer , int size)
 {
 	unsigned short iphdrlen;
@@ -316,4 +322,3 @@ void PrintData(const u_char * data , int size)
 		}
 	}
 }
-
