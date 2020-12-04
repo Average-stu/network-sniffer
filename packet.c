@@ -103,7 +103,7 @@ void packet(u_char *args, const struct pcap_pkthdr *header, const u_char *buffer
 		 	++misc;
 		 	break;		 
 	}
-	printf("TCP: %d\t UDP: %d\t ICMP: %d\t Misc: %d\t Total: %d\r",tcp,udp,icmp,misc,total);
+	printf("TCP: %d || UDP: %d ||  ICMP: %d || Misc: %d || Total: %d\r",tcp,udp,icmp,misc,total);
 }
 
 void print_ethernet_header(const u_char *buffer, int size)
